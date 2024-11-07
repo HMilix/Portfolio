@@ -1,36 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { themeChange } from 'theme-change';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>HMR</h1>
-      <div className="card">
-        <button className="btn btn-primary" onClick={() => setCount((count) => count + 1)}>
-          count is N {count}
-        </button>
-        <div className="bg-primary w-full">
-          a
-        </div>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <footer className="footer bg-primary/50 text-neutral-content items-center p-4 mb-auto">
+            <aside className="grid-flow-col items-center">
+                <p className="font-MADESoulmaze">Milix</p>
+                <p>© {new Date().getFullYear()} - Qui regarde ça de toute façon?</p>
+            </aside>
+            <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+                <a href="https://youtube.com/c/Milix" target="parent">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        className="fill-current">
+                        <path
+                            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+                    </svg>
+                </a>
+                <a href="https://x.com/h_milix" target="parent">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="-4 -2 24 24"
+                        className="fill-current">
+                        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/hmilix/" target="parent">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="26"
+                        height="26"
+                        viewBox="2 -2 24 28"
+                        className="fill-current">
+                        <path d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" />
+                    </svg>
+                </a>
+                <a href="https://open.spotify.com/intl-fr/artist/6eL0nSf6D2MPa8GmC5PSEF?si=raEv0jkQRIem6TZINrNK-A" target="parent">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 -1 25 25"
+                        className="fill-current">
+                        <path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm4.87 17.66c-.2 0-.33-.06-.51-.18a12.03 12.03 0 0 0-6.2-1.6c-1.3 0-2.59.16-3.8.42-.19.04-.44.11-.59.11a.75.75 0 0 1-.75-.75c0-.5.29-.75.65-.82 1.48-.34 2.96-.53 4.49-.53 2.62 0 4.97.6 6.98 1.8.3.18.47.36.47.8 0 .43-.35.75-.74.75zm1.3-3.17c-.25 0-.42-.1-.6-.21a15.22 15.22 0 0 0-7.62-1.93c-1.51 0-2.83.21-3.91.5-.24.07-.37.14-.59.14a.94.94 0 0 1-.93-.95c0-.5.24-.86.74-1C6.61 10.67 8 10.4 10 10.4c3.15 0 6.18.78 8.57 2.2.4.24.55.53.55.96 0 .52-.41.94-.93.94zm1.5-3.7c-.25 0-.4-.06-.62-.18-2.18-1.3-5.55-2.02-8.8-2.02-1.63 0-3.29.16-4.8.57-.17.05-.4.14-.62.14-.64 0-1.13-.51-1.13-1.15 0-.65.4-1.02.84-1.15 1.71-.5 3.62-.74 5.7-.74 3.52 0 7.23.73 9.94 2.32.36.2.62.52.62 1.09 0 .65-.53 1.12-1.14 1.12z" />
+                    </svg>
+                </a>
+                <a href="https://soundcloud.com/hmilix" target="parent">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        className="fill-current">
+                        <path d="M1.16 16.86c.05 0 .1-.04.1-.1l.27-2.1-.27-2.16c0-.05-.05-.1-.1-.1s-.1.05-.1.1l-.24 2.16.24 2.1c0 .06.05.1.1.1zm-.89-.8c.05 0 .09-.04.1-.09l.2-1.31-.2-1.33c-.01-.06-.05-.1-.1-.1s-.09.04-.1.1L0 14.66l.18 1.31c0 .05.04.1.1.1zm1.95-3.96c0-.07-.06-.12-.12-.12s-.11.05-.12.12l-.22 2.56.22 2.46c0 .07.06.12.12.12s.11-.05.12-.11l.26-2.47-.26-2.56zm.83 5.24c.08 0 .14-.06.14-.14l.24-2.54-.24-2.63c0-.08-.06-.14-.14-.14a.14.14 0 0 0-.14.14l-.21 2.63.21 2.54c0 .08.07.14.14.14zm.96.04c.09 0 .16-.07.16-.16l.23-2.56-.23-2.44c0-.09-.07-.16-.16-.16a.16.16 0 0 0-.16.16l-.2 2.44.2 2.56c0 .1.07.16.16.16zm1.36-2.72l-.21-3.96c0-.1-.09-.18-.18-.18-.1 0-.18.07-.19.18l-.18 3.96.18 2.56c.01.1.09.18.19.18s.17-.08.18-.18l.21-2.56zm.58 2.75c.1 0 .2-.09.2-.2l.2-2.55-.2-4.87a.2.2 0 0 0-.2-.2.2.2 0 0 0-.2.2l-.18 4.87.18 2.55c0 .11.1.2.2.2zm.98-8.25c-.12 0-.22.1-.22.22l-.16 5.28.16 2.52c0 .13.1.22.22.22s.22-.1.22-.22l.19-2.52-.19-5.28c0-.12-.1-.22-.22-.22zm1 8.25c.12 0 .23-.1.23-.24l.17-2.5-.17-5.46a.24.24 0 0 0-.24-.25c-.13 0-.24.11-.24.25l-.15 5.45.15 2.5c0 .14.1.25.24.25zm.99 0c.14 0 .26-.12.26-.27l.16-2.48-.16-5.32a.26.26 0 0 0-.26-.26.26.26 0 0 0-.27.26l-.13 5.32.13 2.48c0 .15.12.27.27.27zm1.43-2.75l-.14-5.12a.29.29 0 0 0-.29-.28.29.29 0 0 0-.28.28l-.13 5.12.13 2.47a.28.28 0 0 0 .57 0l.14-2.47zm.59 2.76a.3.3 0 0 0 .3-.3l.13-2.46-.13-6.1a.3.3 0 0 0-.3-.3.3.3 0 0 0-.3.3l-.12 6.1.11 2.45c0 .17.14.3.3.3zm1-9.73a.33.33 0 0 0-.32.33l-.14 6.64.14 2.42c0 .17.15.32.32.32.18 0 .33-.15.33-.32l.14-2.42-.14-6.64a.33.33 0 0 0-.33-.33zm.93 9.73h8.18a2.95 2.95 0 1 0-1.14-5.67 5.2 5.2 0 0 0-7.08-4.4c-.22.09-.28.18-.28.35v9.37c0 .18.14.33.32.35z" />
+                    </svg>
+                </a>
+            </nav>
+        </footer>
     </>
   )
 }
