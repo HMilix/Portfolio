@@ -1,8 +1,10 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { themeChange } from 'theme-change';
+import HomePage from "../pages/HomePage";
+import AboutPage from "../pages/AboutPage";
+import ContactPage from "../pages/ContactPage";
 
-function Header() {
+function Header({ changePage }) {
     const [isHovered, setIsHovered] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'milixstheme');
 
@@ -21,6 +23,19 @@ function Header() {
         milixstheme: 'Default',
         light: 'Light',
         dark: 'Dark',
+    };
+    const [currentPage, setCurrentPage] = useState(window.location.pathname);
+
+    useEffect(() => {
+        const handlePopState = () => setCurrentPage(window.location.pathname);
+        window.addEventListener('popstate', handlePopState);
+
+        return () => window.removeEventListener('popstate', handlePopState);
+    }, []);
+
+    const navigate = (page) => {
+        window.history.pushState({}, '', page);
+        setCurrentPage(page);
     };
 
     return (
@@ -57,15 +72,15 @@ function Header() {
 
                 {/* --- BIG SCREEN --- */}
                 <ul className="hidden lg:flex menu menu-horizontal bg-neutral text-neutral-content rounded-box w-fit justify-self-end">
-                    <li><btn>Home</btn></li>
-                    <li><btn>A propos</btn></li>
-                    <li><btn>Contact</btn></li>
+                    <li><button onClick={() => changePage("home")}>Home</button></li>
+                    <li><button onClick={() => changePage("about")}>A propos</button></li>
+                    <li><button onClick={() => changePage("contact")}>Contact</button></li>
                 </ul>
 
                 {/* --- SMALL SCREEN / PHONE--- */}
                 <ul className="lg:hidden menu rounded-box w-fit mr-10 bg-neutral ml-4 justify-self-end">
                     <li>
-                        <btn>
+                        <button>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -78,10 +93,10 @@ function Header() {
                                     strokeWidth="2"
                                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                             </svg>
-                        </btn>
+                        </button>
                     </li>
                     <li>
-                        <btn>
+                        <button>
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
                                 fill="none"
@@ -91,10 +106,10 @@ function Header() {
                                 strokeLinecap="round"
                                 strokeLinejoin="round">
                                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        </btn>
+                        </button>
                     </li>
                     <li>
-                        <btn>
+                        <button>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -107,7 +122,7 @@ function Header() {
                                     strokeWidth="2"
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                             </svg>
-                        </btn>
+                        </button>
                     </li>
                 </ul>
                 <h1 className="font-MADESoulmaze text-3xl text-balance text-center justify-self-center col-start-2 justify-start">Axel "Milix" WILFART</h1>

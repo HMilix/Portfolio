@@ -1,32 +1,34 @@
-import './App.css'
-import Footer from "./components/Footer";
+import './App.css';
+import { useState } from 'react';
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 import Header from "./components/Header";
-import ArticlesPage from "./components/ArticlesPage";
 
 function App() {
-  return (
-    <>
-        <Header />
+    const [activePage, setActivePage] = useState("home");
 
-        <body className="App overflow-x-hidden flex items-center justify-center flex-col py-8">
+    const changePage = (page) => {
+        setActivePage(page);
+    };
 
-        <div className="flex flex-row font-MADESoulmaze mx-auto text-3xl py-8">
-            <h1 className="">MON TRAVAIL</h1>
-            <h1 className="pl-2 animate-blink">_</h1>
-        </div>
+    const renderPage = () => {
+        switch (activePage) {
+            case "about":
+                return <AboutPage />;
+            case "contact":
+                return <ContactPage />;
+            default:
+                return <HomePage />;
+        }
+    };
 
-        <div className="h-fit w-[100%] rounded-xl">
-            <ArticlesPage />
-        </div>
-        <div className="divider"></div>
-        <div className="bg-primary h-fit w-[90%]    rounded-xl">
-            <p>A</p>
-        </div>
-        </body>
-
-        <Footer />
-    </>
-  )
+    return (
+        <>
+            <Header changePage={changePage} />
+            {renderPage()}
+        </>
+    );
 }
 
-export default App
+export default App;
