@@ -29,7 +29,7 @@ function CollapsibleComponent({ img, imgAlt, titleOpen, titleClosed, content, li
   };
 
   return (
-    <div className="bg-neutral p-4 mt-4 rounded-xl shadow-lg shadow-info transition-all duration-500">
+    <div className="bg-neutral p-4 mt-4 card shadow-lg shadow-info transition-all duration-500">
       <div className="flex items-start cursor-pointer" onClick={handleToggle}>
         <div className={`overflow-hidden transition-all duration-500 rounded-lg ${
             isOpen ? 'w-48 h-32 md:w-60 md:h-40' : 'w-20 h-20'

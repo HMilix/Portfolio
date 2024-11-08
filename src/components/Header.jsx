@@ -8,31 +8,36 @@ function Header({ changePage }) {
     const [isHovered, setIsHovered] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'milixstheme');
 
+    //Theme changer
     useEffect(() => {
         themeChange(false);
         document.documentElement.setAttribute('data-theme', theme);
     }, [theme]);
 
+    //Used to store Theme choice
     const handleThemeChange = (newTheme) => {
         setTheme(newTheme);
         localStorage.setItem('theme', newTheme);
         document.documentElement.setAttribute('data-theme', newTheme);
     };
 
+    //Used to display options
     const themeOptions = {
         milixstheme: 'Default',
         light: 'Light',
         dark: 'Dark',
+        cyberpunk: 'Cyberpunk',
+        cupcake: 'Cupcake'
     };
-    const [currentPage, setCurrentPage] = useState(window.location.pathname);
 
+    //Used to change page
+    const [currentPage, setCurrentPage] = useState(window.location.pathname);
     useEffect(() => {
         const handlePopState = () => setCurrentPage(window.location.pathname);
         window.addEventListener('popstate', handlePopState);
 
         return () => window.removeEventListener('popstate', handlePopState);
     }, []);
-
     const navigate = (page) => {
         window.history.pushState({}, '', page);
         setCurrentPage(page);
@@ -48,7 +53,7 @@ function Header({ changePage }) {
                             <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
                         </svg>
                     </div>
-                    <ul tabIndex={0} className="mt-44 ml-1 bg-neutral-content dropdown-content outline-info rounded-box z-100 w-15 p-2 shadow-2xl">
+                    <ul tabIndex={0} className="mt-60 ml-1 bg-neutral-content dropdown-content outline-info rounded-box z-100 w-15 p-2 shadow-2xl">
                         {Object.entries(themeOptions).map(([value, label]) => (
                             <li key={value}>
                                 <label className="cursor-pointer">
@@ -67,7 +72,7 @@ function Header({ changePage }) {
                     </ul>
                 </div>
                 <div className="relative mx-auto flex flex-auto justify-center" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    <h1 className="font-MADESoulmaze w-fit text-balance leading-none text-center whitespace-nowrap text-[2.7rem] mx-auto my-auto">{isHovered ? 'NEVER STOP TO BEING CREATIVE.' : 'Portfolio'}</h1>
+                    <h1 className="font-MADESoulmaze hover:font-MADESoulmazeOutline w-fit text-balance leading-none text-center whitespace-nowrap text-[2.7rem] mx-auto my-auto">{isHovered ? 'NEVER STOP TO BEING CREATIVE.' : 'Portfolio'}</h1>
                 </div>
 
                 {/* --- BIG SCREEN --- */}
@@ -80,7 +85,7 @@ function Header({ changePage }) {
                 {/* --- SMALL SCREEN / PHONE--- */}
                 <ul className="lg:hidden menu rounded-box w-fit mr-10 bg-neutral ml-4 justify-self-end">
                     <li>
-                        <button>
+                        <button onClick={() => changePage("home")}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -93,10 +98,10 @@ function Header({ changePage }) {
                                     strokeWidth="2"
                                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                             </svg>
-                        </button>
+                        </button >
                     </li>
                     <li>
-                        <button>
+                        <button onClick={() => changePage("about")}>
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
                                 fill="none"
@@ -109,7 +114,7 @@ function Header({ changePage }) {
                         </button>
                     </li>
                     <li>
-                        <button>
+                        <button onClick={() => changePage("contact")}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"

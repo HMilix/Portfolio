@@ -14,11 +14,10 @@ function ContactForm() {
     };
 
     return (
-        <div className="bg-secondary text-secondary-content max-w-2xl rounded-lg p-4 m-auto my-8">
+        <div className="bg-secondary text-secondary-content card p-4 w-2/4 m-auto my-8">
             <form onSubmit={handleSubmit} className="contact-form grid grid-cols-[0.15fr_1fr] gap-4">
-                {/* Nom */}
                 <label htmlFor="name" className="self-center justify-self-end">
-                    Nom :
+                    Nom:
                 </label>
                 <input
                     className="input input-bordered input-info"
@@ -29,9 +28,8 @@ function ContactForm() {
                     required
                 />
 
-                {/* Email */}
                 <label htmlFor="email" className="self-center justify-self-end">
-                    Email :
+                    Email:
                 </label>
                 <input
                     className="input input-bordered input-info"
@@ -42,9 +40,8 @@ function ContactForm() {
                     required
                 />
 
-                {/* Message */}
                 <label htmlFor="message" className="self-start justify-self-end">
-                    Message :
+                    Message:
                 </label>
                 <textarea
                     className="textarea textarea-info"

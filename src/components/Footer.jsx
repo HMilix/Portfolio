@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer className="footer bg-primary/50 text-neutral-content items-center p-4 mb-auto">
+        <footer className="footer bg-neutral/50 text-neutral-content items-center p-4 mb-auto">
             <aside className="grid-flow-col items-center">
                 <p className="font-MADESoulmaze">Milix</p>
                 <p>© {new Date().getFullYear()} - Qui regarde ça de toute façon?</p>

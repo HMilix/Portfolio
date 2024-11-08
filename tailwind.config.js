@@ -9,6 +9,9 @@ export default {
     extend: {
       fontFamily: {
         MADESoulmaze: ['MADESoulmaze', 'sans-serif'],
+        MADESoulmazeItalic: ['MADESoulmazeItalic', 'sans-serif'],
+        MADESoulmazeOutline: ['MADESoulmazeOutline', 'sans-serif'],
+        MADESoulmazeOutlineItalic: ['MADESoulmazeOutlineItalic', 'sans-sherif']
       },
       container: {
         center: true,
@@ -58,7 +61,9 @@ export default {
         }
       },
       "light", 
-      "dark"
+      "dark",
+      "cyberpunk",
+      "cupcake"
     ],
   },
   plugins: [
