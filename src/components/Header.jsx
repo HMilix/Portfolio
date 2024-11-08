@@ -27,7 +27,8 @@ function Header({ changePage }) {
         light: 'Light',
         dark: 'Dark',
         cyberpunk: 'Cyberpunk',
-        cupcake: 'Cupcake'
+        synthwave: 'Synthwave',
+        pastel: 'Pastel'
     };
 
     //Used to change page
@@ -53,7 +54,7 @@ function Header({ changePage }) {
                             <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
                         </svg>
                     </div>
-                    <ul tabIndex={0} className="mt-60 ml-1 bg-neutral-content dropdown-content outline-info rounded-box z-100 w-15 p-2 shadow-2xl">
+                    <ul tabIndex={0} className="mt-[18rem] ml-1 bg-neutral-content dropdown-content outline-info rounded-box w-15 p-2 shadow-2xl">
                         {Object.entries(themeOptions).map(([value, label]) => (
                             <li key={value}>
                                 <label className="cursor-pointer">

@@ -26,7 +26,7 @@ function App() {
     return (
         <>
             <Header changePage={changePage} />
-            {renderPage()}
+                {renderPage()}
         </>
     );
 }

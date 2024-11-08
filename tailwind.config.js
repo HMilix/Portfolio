@@ -63,7 +63,8 @@ export default {
       "light", 
       "dark",
       "cyberpunk",
-      "cupcake"
+      "synthwave",
+      "pastel"
     ],
   },
   plugins: [

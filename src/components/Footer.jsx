@@ -3,7 +3,8 @@ function Footer() {
         <footer className="footer bg-neutral/50 text-neutral-content items-center p-4 mb-auto">
             <aside className="grid-flow-col items-center">
                 <p className="font-MADESoulmaze">Milix</p>
-                <p>© {new Date().getFullYear()} - Qui regarde ça de toute façon?</p>
+                <p>© {new Date().getFullYear()} -</p>
+                <p className="text-neutral-content/50">Qui regarde ça de toute façon?</p>
             </aside>
             <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
                 <a href="https://youtube.com/c/Milix" target="parent">
