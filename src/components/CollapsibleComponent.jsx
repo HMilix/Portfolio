@@ -31,7 +31,7 @@ function CollapsibleComponent({ img, imgAlt, titleOpen, titleClosed, content, li
   return (
     <div className="bg-neutral z-auto p-4 mt-4 card shadow-lg shadow-info transition-all duration-500">
       <div className="flex items-start cursor-pointer" onClick={handleToggle}>
-        <div className={`overflow-hidden transition-all duration-500 rounded-lg ${
+        <div className={`overflow-hidden transition-all duration-500 rounded-box ${
             isOpen ? 'w-48 h-32 md:w-60 md:h-40' : 'w-20 h-20'
           }`}
           onClick={handleImageClick}>
@@ -53,11 +53,10 @@ function CollapsibleComponent({ img, imgAlt, titleOpen, titleClosed, content, li
         </div>
       </div>
 
-      {/* Modale pour afficher l'image en grand */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" onClick={handleCloseModal}>
-          <div className="max-w-lg bg-neutral p-4 rounded-lg relative" onClick={(e) => e.stopPropagation()}>
-            <img src={img} alt={imgAlt} className="max-w-full max-h-screen rounded-lg" />
+          <div className="max-w-lg bg-neutral p-4 rounded-box relative" onClick={(e) => e.stopPropagation()}>
+            <img src={img} alt={imgAlt} className="max-w-full max-h-screen rounded-box" />
             <button className="absolute top-2 right-2 text-white text-2xl" onClick={handleCloseModal}>&times;</button>
           </div>
         </div>

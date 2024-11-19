@@ -31,23 +31,10 @@ function Header({ changePage }) {
         pastel: 'Pastel'
     };
 
-    //Used to change page
-    const [currentPage, setCurrentPage] = useState(window.location.pathname);
-    useEffect(() => {
-        const handlePopState = () => setCurrentPage(window.location.pathname);
-        window.addEventListener('popstate', handlePopState);
-
-        return () => window.removeEventListener('popstate', handlePopState);
-    }, []);
-    const navigate = (page) => {
-        window.history.pushState({}, '', page);
-        setCurrentPage(page);
-    };
-
     return (
         <header>
-            <div className="navbar w-full grid grid-cols-[150px_1fr_150px] lg:grid-cols-[270px_1fr_270px] gap-4 gap-y-0 justify-between bg-gradient-to-b from-base-300 to-base-200 rounded-b-2xl">
-                <div className="m-2 flex flex-row dropdown z-80">
+            <div className="navbar w-full grid grid-cols-[150px_1fr_150px] lg:grid-cols-[270px_1fr_270px] gap-4 gap-y-0 justify-between bg-gradient-to-b from-base-300 to-base-200 rounded-b-box">
+                <div className="m-2 flex flex-row dropdown z-[100]">
                     <div tabIndex={0} role="button" className="btn m-1 btn-neutral text-neutral-content">
                         Theme
                         <svg width="12px" height="12px" className="inline-block h-2 w-2 fill-current opacity-60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
@@ -79,7 +66,7 @@ function Header({ changePage }) {
                 {/* --- BIG SCREEN --- */}
                 <ul className="hidden lg:flex menu menu-horizontal bg-neutral text-neutral-content rounded-box w-fit justify-self-end">
                     <li><button onClick={() => changePage("home")}>Home</button></li>
-                    <li><button onClick={() => changePage("about")}>A propos</button></li>
+                    <li><button onClick={() => changePage("about")}>À propos</button></li>
                     <li><button onClick={() => changePage("contact")}>Contact</button></li>
                 </ul>
 
