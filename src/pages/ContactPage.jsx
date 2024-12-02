@@ -7,7 +7,10 @@ function Contact() {
     return (
         <div>
             <div className="flex justify-center flex-col">
-                <h2 className="m-auto my-4 text-center text-4xl font-MADESoulmazeOutline">Contact</h2>
+                <div className="flex flex-row font-MADESoulmazeOutline mx-auto text-4xl py-8">
+                    <h1 className="">CONTACT</h1>
+                    <h1 className="pl-2 animate-blink">_</h1>
+                </div>
                 <div className="container w-[50%] grid grid-cols-[0.10fr_0.01fr_1fr] gap-2">
                     <p>Email</p>
                     <p className="justify-self-center">:</p>
@@ -19,7 +22,9 @@ function Contact() {
                     <p className="justify-self-center">:</p>
                     <a href="https://www.linkedin.com" className="text-blue-500 underline">linkedin.com</a>
                 </div>
-                <ContactForm/>
+                <div className="mb-8">
+                    <ContactForm/>
+                </div>
             </div>
             <Footer/>
         </div>

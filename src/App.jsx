@@ -24,10 +24,10 @@ function App() {
     };
 
     return (
-        <>
+        <div className="">
             <Header changePage={changePage} />
                 {renderPage()}
-        </>
+        </div>
     );
 }
 
