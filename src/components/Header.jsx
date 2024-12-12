@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react';
 import { themeChange } from 'theme-change';
-import HomePage from "../pages/HomePage";
-import AboutPage from "../pages/AboutPage";
-import ContactPage from "../pages/ContactPage";
 
 function Header({ changePage }) {
     const [isHovered, setIsHovered] = useState(false);
@@ -69,20 +66,20 @@ function Header({ changePage }) {
                 </div>
 
                 {/* --- BIG SCREEN --- */}
-                <ul className="hidden lg:flex menu menu-horizontal bg-neutral text-neutral-content rounded-box w-fit justify-self-end">
+                <ul className="hidden lg:flex menu menu-horizontal bg-neutral text-neutral-content rounded-box w-fit  justify-self-end">
                     <li>
-                        <button onClick={() => changePage("home")}>Accueil</button>
+                        <button className="btn btn-neutral min-h-[2.5rem] h-[2.5rem]" onClick={() => changePage("home")}>Accueil</button>
                     </li>
                     <li>
-                        <button onClick={() => changePage("about")}>À propos</button>
+                        <button className="btn btn-neutral min-h-[2.5rem] h-[2.5rem]" onClick={() => changePage("about")}>À propos</button>
                     </li>
                     <li>
-                        <button onClick={() => changePage("contact")}>Contact</button>
+                        <button className="btn btn-neutral min-h-[2.5rem] h-[2.5rem]" onClick={() => changePage("contact")}>Contact</button>
                     </li>
                 </ul>
 
                 {/* --- SMALL SCREEN / PHONE--- */}
-                <ul className="lg:hidden menu rounded-box w-auto px-2 bg-neutral justify-self-end">
+                <ul className="lg:hidden menu rounded-box w-auto px-2 bg-neutral justify-self-end text-neutral-content">
                     <li className="tooltip tooltip-left" data-tip="Accueil">
                         <button onClick={() => changePage("home")}>
                             <svg

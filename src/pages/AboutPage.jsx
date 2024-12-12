@@ -1,10 +1,8 @@
-import Footer from '../components/Footer';
-
 function About() {
     return (
         <div>
             <div className="flex justify-center flex-col">
-                <div className="flex flex-row font-MADESoulmazeOutline mx-auto text-4xl py-8">
+                <div className="flex flex-row font-MADESoulmazeOutline font-bold mx-auto text-4xl py-8">
                     <h1 className="">À PROPOS</h1>
                     <h1 className="pl-2 animate-blink">_</h1>
                 </div>
@@ -14,14 +12,14 @@ function About() {
                     <h1 className="m-auto my-4 text-center text-5xl font-MADESoulmaze">Qui suis-je ?</h1>
                 </div>
                 <p className="py-8 text-justify place-self-center text-wrap w-[70vw]">
-                    Je suis Axel Wilfart, plus connu sous le nom de Milix, mon nom de créateur.
-                    J'ai actuellement 20 ans et je suis étudiant à l'université de Lille en BUT informatique (anciennement DUT).
-                    Je veux faire de l'informatique mon métier car c'est un domaine qui m'intéresse énormément,
-                    et que j'aimerais différencier mes passions de mon métier. En effet, la création de contenu sur internet
-                    me passionne, Graphisme, Musique, Vidéo, Photo, 3D, Montage, Jeux si c'est créatif et que c'est sur internet.
-                    Même ce site est un exemple de créativité : il utilise la charte graphique mise en place pour ma chaîne.
-                    Tout ce qui n'est pas "scolaire" / "universitaire" est appris sur mon temps libre et entièrement en autodidacte,
-                    car je suis de nature très curieux.
+                    Je suis <b>Axel Wilfart</b>, plus connu sous le nom de <b>Milix</b>, mon nom de créateur.
+                    J'ai actuellement 20 ans et je suis <b>étudiant à l'université</b> de Lille en <b>BUT informatique</b> (anciennement DUT).
+                    Je veux faire de l'informatique mon métier car c'est un domaine qui <b>m'intéresse énormément</b>,
+                    et que j'aimerais différencier mes passions de mon métier. En effet, <b>la création</b> de contenu sur internet
+                    me passionne, <b>Graphisme, Musique, Vidéo, Photo, 3D, Montage, Jeux</b> si c'est créatif et que c'est sur internet.
+                    Même <b>ce site est un exemple de créativité</b> : il utilise la <b>charte graphique</b> mise en place pour ma chaîne.
+                    Tout ce qui n'est pas "scolaire" / "universitaire" est appris sur mon temps libre et <b>entièrement en autodidacte</b>,
+                    car je suis de nature <b>très curieux</b>.
                 </p>
 
                 {/* ---------------- EXPERIENCES ---------------- */}
@@ -30,9 +28,9 @@ function About() {
                 </div>
                 <p className="py-8 text-justify place-self-center text-wrap w-[70vw]">
                     Pour ce qui est de l'expérience professionnelle et informatique, pour mon stage de troisième
-                    j'ai eu la chance de faire une stage à Norsys. Mis à part quelques petits boulots par-ci par-là, étant encore jeune
+                    j'ai eu la chance de faire une <b>stage à Norsys</b>. Mis à part quelques petits boulots par-ci par-là, étant encore jeune
                     j'ai n'ai pas une grande connaissance du monde de l'entreprise. Mais ça ne serait tarder, ma formation actuelle
-                    oblige à faire plusieurs mois de stages. Cela dit j'ai fait un petit séjour de Game Design pour les jeunes.
+                    oblige à faire <b>plusieurs mois de stages</b>. Cela dit j'ai fait un petit séjour de <b>Game Design</b> pour les jeunes.
                 </p>
 
                 {/* ---------------- FORMATIONS ---------------- */}
@@ -151,9 +149,9 @@ function About() {
                         </div>
                     </div>
                     <p className="py-8 text-justify text-wrap w-[70vw]">
-                        Mon parcours et mes formations restent traditionnels. Un brevet, un baccalauréat STI2D (Sciences et Technologies de l'Industrie et du Développement Durable),
-                        une formation PIX (d'une utilité relative) et une formation BUT Informatique en 3 ans pour l'instant à mi-chemin.
-                        Mis à part le parcours scolaire, je dispose du permis B et suis véhiculé.
+                        Mon parcours et mes formations restent traditionnels. Un brevet, un baccalauréat <b>STI2D</b> (Sciences et Technologies de l'Industrie et du Développement Durable),
+                        une formation <b>PIX</b> (d'une utilité relative) et une <b>formation BUT Informatique</b> en 3 ans pour l'instant à mi-chemin.
+                        Mis à part le parcours scolaire, je dispose du <b>permis B</b> et suis <b>véhiculé</b>.
                     </p>
                 </div>
 
@@ -169,7 +167,7 @@ function About() {
                             Java - Jave EE - JavaFX <br/>
                             HTML <br/>
                             CSS <br/>
-                            C* <br/>
+                            C <br/>
                             SQL / Postgresql <br/>
                             Méthodologie Agile <br/>
                             React* <br/>
@@ -185,7 +183,7 @@ function About() {
                             Photographe* <br/>
                             Régisseur Lumière <br/>
                         </p>
-                        <p className="text-xs">*relatif</p>
+                        <p className="text-xs">*débutant</p>
                     </div>
 
                     <div className="divider divider-horizontal divider-neutral "></div>
@@ -193,19 +191,22 @@ function About() {
                     <div className="grid h-20 flex-grow place-items-center h-fit">
                         <h1 className="m-auto my-4 text-center text-3xl font-MADESoulmaze">Centres d'intérêts</h1>
                         <p className="py-8 text-justify place-self-center text-wrap w-[38.75vw] h-fit">
-                            Du graphisme à la création de jeux en passant par la musique, la vidéo, la photo, la modélisation et conception 3D
-                            et le montage, si cela se fait sur ordinateur et que c'est créatif, c'est digne de mon intérêt. Dans les détails :
-                            j'ai eu besoin du graphisme pour mon logo, ma bannière ainsi que pour les miniatures pour ma chaîne Youtube, et
-                            avec un petit peu d'expérience, j'ai commençé à réaliser des affiches pour ma ville car mon père était
-                            président du Comité d'Animation de ma ville. Mixé avec le graphisme, la vidéo et la photo (bien que néophyte dans ce dernier)
-                            m'ont permis de faire quelques projets comme les covers et vidéos de mes musiques. La modélisation et la conception 3D
-                            sont principalement centré sur le jeu Minecraft, en faisant des "renders", je me suis aperçus que c'était relativement complexe
-                            et difficile d'accès, et en conceptualisant des modèles gratuit et tout publiques, cela rend plus accessible la création 3D.
-                            Même si cela reste globalement centré sur le jeu Minecraft, les techniques utilisés sont applicable pour de la création 3D générale.
-                            Ce site web et aussi un exemple de créativité. En effet, il combine le graphisme et le development web, et ma curiosité
-                            m'as poussé à utiliser un nouveau language de programmation pour moi qui est le React (avec Tailwindcss et DaisyUI pour le côté graphique).
-                            Tout ça est appris sur mon temps libre et totalement en autodidacte. Aucun cours, aucune formations,
-                            juste de la curiosité - quelques heures de galère, c'est vrai - et des tutos, mon permis d'être créatif sur internet.
+                            Du <b>graphisme</b> à la <b>création de jeux</b> en passant par <b>la musique, la vidéo, la photo, la modélisation et conception 3D </b>
+                            et <b>le montage</b>, si cela se fait sur ordinateur et que c'est créatif, c'est digne de mon intérêt.<br/>
+                            Dans les détails :
+                            j'ai eu besoin du <b>graphisme</b> pour mon <b>logo</b>, <b>ma bannière</b> ainsi que pour les <b>miniatures</b> pour ma <b>chaîne Youtube</b>, et
+                            avec un petit peu d'expérience, j'ai commençé à <b>réaliser des affiches pour ma ville</b> car mon père était
+                            président du Comité d'Animation de ma ville.<br/>
+                            Mixé avec le graphisme, <b>la vidéo et la photo</b> (bien que néophyte dans ce dernier)
+                            m'ont permis de faire quelques projets comme <b>les covers</b> et <b>vidéos de mes musiques</b>.<br/>
+                            La <b>modélisation</b> et la <b>conception 3D </b>
+                            sont principalement centré sur le jeu Minecraft, en faisant des "renders", je me suis aperçus que c'était <b>relativement complexe</b>
+                            et <b>difficile d'accès</b>, et en <b>conceptualisant des modèles gratuit</b> et <b>tout publiques</b>, cela rend plus accessible la création 3D.
+                            Même si cela reste globalement centré sur le jeu Minecraft, les <b>techniques</b> utilisés sont <b>applicable</b> pour de la <b>création 3D générale</b>.<br/>
+                            <b>Ce site web</b> et aussi un exemple de créativité. En effet, il <b>combine le graphisme</b> et le <b>development web</b>, et ma curiosité
+                            m'as poussé à utiliser un nouveau language de programmation pour moi qui est le <b>React</b> (avec <b>Tailwindcss</b> et <b>DaisyUI</b> pour le côté graphique).<br/>
+                            Tout ça est appris sur mon temps libre et totalement en <b>autodidacte</b>. Aucun cours, aucune formations,
+                            juste de la curiosité - quelques heures de galère, c'est vrai - et des tutos, mon permis d'<b>être créatif sur internet</b>.
                         </p>
                     </div>
                 </div>
@@ -227,7 +228,6 @@ function About() {
                        className="text-blue-500 underline">gitlab.univ-lille.fr/axel.wilfart.etu</a>
                 </div>
             </div>
-            <Footer/>
         </div>
     );
 }

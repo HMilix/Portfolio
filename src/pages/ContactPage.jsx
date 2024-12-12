@@ -1,5 +1,3 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
 
 function Contact() {
@@ -7,7 +5,7 @@ function Contact() {
     return (
         <div>
             <div className="flex justify-center flex-col">
-                <div className="flex flex-row font-MADESoulmazeOutline mx-auto text-4xl py-8">
+                <div className="flex flex-row font-MADESoulmazeOutline font-bold mx-auto text-4xl py-8">
                     <h1 className="">CONTACT</h1>
                     <h1 className="pl-2 animate-blink">_</h1>
                 </div>
@@ -26,7 +24,6 @@ function Contact() {
                     <ContactForm/>
                 </div>
             </div>
-            <Footer/>
         </div>
     );
 }
