@@ -58,7 +58,7 @@ function ContactForm() {
                 'service_0rgobeo',
                 'template_ydai4n9',
                 templateParams,
-                'QqI5thbNrhK2yh12J'
+                'uI3Wpdeknaz2z7kwN'
             );
             alert('Email envoyé avec succès !');
             setName('');
