@@ -1,19 +1,13 @@
-import {useEffect, useRef, useState} from 'react';
-import emailjs from '@emailjs/browser';
+import {useEffect, useState} from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import emailjs from '@emailjs/browser';
 
 function ContactForm() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [captchaValue, setCaptchaValue] = useState(null);
-    const [isSending, setIsSending] = useState(false);
-    const captchaRef = useRef(null);
-
-    const handleCaptchaChange = (value) => {
-        setCaptchaValue(value);
-    };
-
+    const [recaptchaToken, setRecaptchaToken] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
         const savedName = sessionStorage.getItem('name');
@@ -37,45 +31,49 @@ function ContactForm() {
         sessionStorage.setItem('message', message);
     }, [message]);
 
-    const handleSubmit = async (e) => {
+    const handleRecaptchaChange = (token) => {
+        setRecaptchaToken(token);
+    };
+
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!captchaValue) {
-            alert('Veuillez valider le reCAPTCHA avant de soumettre le formulaire.');
+        if (!recaptchaToken) {
+            alert('Veuillez valider le reCAPTCHA.');
             return;
         }
 
-        setIsSending(true);
+        setIsSubmitting(true);
 
         const templateParams = {
-            name: name,
-            email: email,
-            message: message,
+            name,
+            email,
+            message,
+            'g-recaptcha-response': recaptchaToken,  // Ajout du token reCAPTCHA
         };
 
-        try {
-            await emailjs.send(
+        emailjs
+            .send(
                 'service_0rgobeo',
-                'template_ydai4n9',
+                'template_5ydhz3p',
                 templateParams,
                 'uI3Wpdeknaz2z7kwN'
-            );
-            alert('Email envoyé avec succès !');
-            setName('');
-            setEmail('');
-            setMessage('');
-            setCaptchaValue(null);
-            sessionStorage.clear();
-            sessionStorage.removeItem('name');
-            sessionStorage.removeItem('email');
-            sessionStorage.removeItem('message');
-            captchaRef.current.reset();
-            setCaptchaValue(null);
-        } catch (error) {
-            alert('Erreur lors de l\'envoi de l\'email. Réessayez plus tard.');
-        } finally {
-            setIsSending(false);
-        }
+            )
+            .then(() => {
+                alert('Message envoyé avec succès !');
+                setName('');
+                setEmail('');
+                setMessage('');
+                sessionStorage.clear();
+                setRecaptchaToken(null);
+            })
+            .catch((error) => {
+                console.error('Erreur lors de l\'envoi :', error);
+                alert('Une erreur est survenue. Veuillez réessayer.');
+            })
+            .finally(() => {
+                setIsSubmitting(false);
+            });
     };
 
     return (
@@ -91,7 +89,9 @@ function ContactForm() {
                     id="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    required/>
+                    required
+                />
+
                 <label htmlFor="email" className="self-center justify-self-end">
                     Email :
                 </label>
@@ -101,7 +101,9 @@ function ContactForm() {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    required/>
+                    required
+                />
+
                 <label htmlFor="message" className="self-start justify-self-end">
                     Message :
                 </label>
@@ -114,19 +116,18 @@ function ContactForm() {
 
                 <div className="col-span-2 flex justify-center">
                     <ReCAPTCHA
-                        ref={captchaRef}
                         sitekey="6LdCsJoqAAAAAAXTK7-MmTxmLpXN70dJUALS7plZ"
-                        onChange={handleCaptchaChange}
+                        onChange={handleRecaptchaChange}
                     />
                 </div>
 
-                {/* Bouton Envoyer */}
                 <div className="col-span-2 flex justify-center">
                     <button
-                        className={`btn btn-info mt-4 ${isSending ? "loading" : ""}`}
+                        className="btn btn-info mt-4"
                         type="submit"
-                        disabled={isSending}>
-                        {isSending ? "Envoi..." : "Envoyer"}
+                        disabled={isSubmitting}
+                    >
+                        {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
                     </button>
                 </div>
             </form>
