@@ -31,9 +31,9 @@ function Header({ changePage }) {
     return (
         <header>
             <div
-                className="navbar grid grid-cols-[minmax(100px,150px)_1fr_minmax(100px,150px)] lg:grid-cols-[270px_1fr_270px] gap-4 rounded-b-box bg-gradient-to-b from-base-300 via-base-100 to-base-300 bg-[length:auto_200%] animate-scrollGradient">
+                className="navbar grid grid-cols-[minmax(100px,150px)_1fr_minmax(100px,150px)] lg:grid-cols-[30vw_35vw_30vw] lg:gap-4 rounded-b-box bg-gradient-to-b from-base-300 via-base-100 to-base-300 bg-[length:auto_200%] animate-scrollGradient">
 
-                <div className="m-2 flex flex-row dropdown z-[100]">
+                <div className="lg:m-2 flex flex-row dropdown z-[100]">
                     <div tabIndex={0} role="button" className="btn m-1 btn-neutral text-neutral-content">
                         Theme
                         <svg width="12px" height="12px" className="inline-block h-2 w-2 fill-current opacity-60"
@@ -62,19 +62,19 @@ function Header({ changePage }) {
                 </div>
                 <div className="relative mx-auto flex flex-auto justify-center" onMouseEnter={() => setIsHovered(true)}
                      onMouseLeave={() => setIsHovered(false)}>
-                    <h1 className="font-MADESoulmaze hover:font-MADESoulmazeOutline w-fit text-balance leading-none text-center whitespace-nowrap text-[2.7rem] mx-auto my-auto">{isHovered ? 'NEVER STOP TO BEING CREATIVE.' : 'Portfolio'}</h1>
+                    <h1 className="font-MADESoulmaze hover:font-MADESoulmazeOutline w-fit text-balance leading-none text-center whitespace-nowrap lg:text-[2.5rem] text-[1.5rem] mx-auto my-auto">{isHovered ? 'NEVER STOP TO BEING CREATIVE.' : 'Portfolio'}</h1>
                 </div>
 
                 {/* --- BIG SCREEN --- */}
-                <ul className="hidden lg:flex menu menu-horizontal bg-neutral text-neutral-content rounded-box w-fit  justify-self-end">
+                <ul className="p-2 hidden lg:grid grid-cols-3 bg-neutral text-neutral-content rounded-box w-fit justify-self-end">
                     <li>
-                        <button className="btn btn-neutral min-h-[2.5rem] h-[2.5rem]" onClick={() => changePage("home")}>Accueil</button>
+                        <button className="btn btn-neutral shadow-none min-h-[2.5rem] h-[2.5rem] min-w-[95px]" onClick={() => changePage("home")}>Accueil</button>
                     </li>
                     <li>
-                        <button className="btn btn-neutral min-h-[2.5rem] h-[2.5rem]" onClick={() => changePage("about")}>À propos</button>
+                        <button className="btn btn-neutral shadow-none min-h-[2.5rem] h-[2.5rem] min-w-[95px]" onClick={() => changePage("about")}>À propos</button>
                     </li>
                     <li>
-                        <button className="btn btn-neutral min-h-[2.5rem] h-[2.5rem]" onClick={() => changePage("contact")}>Contact</button>
+                        <button className="btn btn-neutral shadow-none min-h-[2.5rem] h-[2.5rem] min-w-[95px]" onClick={() => changePage("contact")}>Contact</button>
                     </li>
                 </ul>
 
@@ -128,7 +128,7 @@ function Header({ changePage }) {
                         </button>
                     </li>
                 </ul>
-                <h1 className="font-MADESoulmaze text-3xl text-balance text-center justify-self-center col-start-2 justify-start">Axel "Milix" WILFART</h1>
+                <h1 className="font-MADESoulmaze text-1xl lg:text-2xl text-balance text-center justify-self-center col-start-2 justify-start">Axel "Milix" WILFART</h1>
             </div>
         </header>
     );
