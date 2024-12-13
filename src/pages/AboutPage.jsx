@@ -191,22 +191,20 @@ function About() {
                     <div className="grid h-20 flex-grow place-items-center h-fit">
                         <h1 className="m-auto my-4 text-center text-3xl font-MADESoulmaze">Centres d'intérêts</h1>
                         <p className="py-8 text-justify place-self-center text-wrap w-[38.75vw] h-fit">
-                            Du <b>graphisme</b> à la <b>création de jeux</b> en passant par <b>la musique, la vidéo, la photo, la modélisation et conception 3D </b>
-                            et <b>le montage</b>, si cela se fait sur ordinateur et que c'est créatif, c'est digne de mon intérêt.<br/>
-                            Dans les détails :
-                            j'ai eu besoin du <b>graphisme</b> pour mon <b>logo</b>, <b>ma bannière</b> ainsi que pour les <b>miniatures</b> pour ma <b>chaîne Youtube</b>, et
-                            avec un petit peu d'expérience, j'ai commençé à <b>réaliser des affiches pour ma ville</b> car mon père était
-                            président du Comité d'Animation de ma ville.<br/>
-                            Mixé avec le graphisme, <b>la vidéo et la photo</b> (bien que néophyte dans ce dernier)
-                            m'ont permis de faire quelques projets comme <b>les covers</b> et <b>vidéos de mes musiques</b>.<br/>
+                            Du <b>graphisme</b> à la <b>création de jeux</b> en passant par <b>la musique, la vidéo, la photo, le montage, la
+                            modélisation et conception 3D </b> si cela se fait sur ordinateur, que c'est créatif, c'est digne de mon intérêt.<br/>
+                            Dans les détails : j'ai eu besoin du <b>graphisme</b> pour mon <b>logo</b>, <b>ma bannière</b> ainsi que pour les <b>miniatures</b> pour ma <b>chaîne Youtube</b>.
+                            Avec ces expériences, j'ai commençé à <b>concevoir des affiches pour ma ville</b> puisque mon père était président du Comité d'Animation.<br/>
+                            <b>La vidéo et la photo</b> (bien que néophyte dans ce dernier domaine) - mixé avec le graphisme - m'ont permis de faire quelques projets comme
+                            <b>les covers</b> et <b>vidéos de mes musiques</b>.<br/>
                             La <b>modélisation</b> et la <b>conception 3D </b>
-                            sont principalement centré sur le jeu Minecraft, en faisant des "renders", je me suis aperçus que c'était <b>relativement complexe</b>
-                            et <b>difficile d'accès</b>, et en <b>conceptualisant des modèles gratuit</b> et <b>tout publiques</b>, cela rend plus accessible la création 3D.
-                            Même si cela reste globalement centré sur le jeu Minecraft, les <b>techniques</b> utilisés sont <b>applicable</b> pour de la <b>création 3D générale</b>.<br/>
-                            <b>Ce site web</b> et aussi un exemple de créativité. En effet, il <b>combine le graphisme</b> et le <b>development web</b>, et ma curiosité
-                            m'as poussé à utiliser un nouveau language de programmation pour moi qui est le <b>React</b> (avec <b>Tailwindcss</b> et <b>DaisyUI</b> pour le côté graphique).<br/>
-                            Tout ça est appris sur mon temps libre et totalement en <b>autodidacte</b>. Aucun cours, aucune formations,
-                            juste de la curiosité - quelques heures de galère, c'est vrai - et des tutos, mon permis d'<b>être créatif sur internet</b>.
+                            sont principalement centrés sur le jeu Minecraft ; en faisant des "renders", je me suis aperçu que c'était
+                            <b> relativement complexe</b> et <b>difficile d'accès</b>. J'ai donc <b>conçu des modèles gratuits</b> et <b>tout public</b>, rendant plus accessible la création 3D.
+                            Même si cela reste globalement centré sur le jeu Minecraft, les <b>techniques</b> utilisées sont <b>applicables</b> pour de la <b>création 3D générale</b>.<br/>
+                            <b>Ce site web</b> est aussi un exemple de créativité. En effet, il <b>combine le graphisme</b> et le <b>dévelopment web</b>.
+                            Ma curiosité m'a poussé à utiliser un nouveau language de programmation qui est le <b>React</b> (avec <b>Tailwindcss</b> et <b>DaisyUI</b> pour le côté graphique).<br/>
+                            J'y ai consacré mon temps libre, en <b>autodidacte</b>, aucun cours, aucune formation,
+                            juste de la curiosité - <em>quelques heures de galère, c'est vrai</em> - et des tutos, m'ont permis d'<b>être créatif sur internet</b>.
                         </p>
                     </div>
                 </div>

@@ -31,7 +31,7 @@ const WelcomeToast = () => {
             {showToast && (
                 <div className="toast toast-end z-10">
                     <div className="alert alert-info">
-                        <span>Oh ! Il semblerait que ce soit votre première fois ici. <br/> Cliquez sur le bouton si vous voulez un petit tour !</span>
+                        <span>Oh ! Il semblerait que ce soit votre première visite. <br/> Cliquez sur le bouton si vous voulez un petit tour !</span>
                         <button className="btn btn-sm btn-primary ml-2" onClick={handleOpenModal}>
                             P'tit tour
                         </button>
@@ -48,11 +48,11 @@ const WelcomeToast = () => {
                         <h3 className="font-bold text-lg font-MADESoulmazeOutline">P'tit tour</h3>
                         <p className="py-4">
                             <h3 className="font-MADESoulmaze text-center my-4">Bienvenue ! Voici quelques astuces pour bien naviguer.</h3>
-                            <h4>Vous pouvez cliquer sur les projets pour afficher leurs contenu et en savoir plus.</h4>
+                            <h4>Vous pouvez cliquer sur les projets pour afficher leur contenu et en savoir plus.</h4>
                             <img src="./images/Tuto1.png" className="my-4 mb-8"/>
-                            <h4>Il est possible d'ouvrir les images dans une fenêtre pour les voir en grand.</h4>
+                            <h4>Il est possible d'ouvrir les images dans une fenêtre pour les agrandir.</h4>
                             <img src="./images/Tuto2.png" className="my-4 mb-8"/>
-                            <h4>Certains projets son différents (voir image si dessous), il est possible de scroller horizontalement pour voir la suite d'image (la même technique s'applique quand la fenêtre de visualisation d'image est ouverte).</h4>
+                            <h4>Certains projets sont différents (voir image ci dessous), il est possible de scroller horizontalement pour voir la suite d'images (la même technique s'applique quand la fenêtre de visualisation d'image est ouverte).</h4>
                             <img src="./images/Tuto3.png" className="my-4 mb-8"/>
 
                         </p>
