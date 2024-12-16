@@ -12,7 +12,7 @@ function HomePage() {
     return (
         <>
             <div className="App overflow-x-hidden flex items-center justify-center flex-col">
-                <div className="flex flex-row font-MADESoulmazeOutline font-bold mx-auto text-4xl py-8">
+                <div className="flex flex-row font-MADESoulmazeOutline font-bold mx-auto lg:text-4xl text-3xl py-8">
                     <h1 className="">MES PROJETS</h1>
                     <h1 className="pl-2 animate-blink">_</h1>
                 </div>
@@ -89,7 +89,7 @@ function HomePage() {
                     </div>
                 </div>
 
-                <div className="divider font-MADESoulmazeOutline font-bold text-4xl">PROJETS PERSONNELS</div>
+                <div className="divider font-MADESoulmazeOutline font-bold lg:text-4xl text-3xl">PROJETS PERSONNELS</div>
 
                 <div className="h-fit w-full">
                     <div className="container mx-auto mb-8">

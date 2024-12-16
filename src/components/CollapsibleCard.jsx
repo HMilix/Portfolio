@@ -42,12 +42,12 @@ function CollapsibleCard({ images, titleOpen, titleClosed, content, link, showbu
   return (
       <div
           className={`card card-side bg-gradient-to-br from-neutral to-accent hover:to-secondary shadow-lg shadow-info my-4 transition-all duration-500 ${
-              isOpen ? 'h-72 md:h-96' : 'h-32 md:h-40'
+              isOpen ? 'h-80 lg:h-96' : 'h-40 lg:h-44'
           }`}>
         <figure>
           <div
-              className={`carousel w-80 rounded-box transition-all duration-500 ${
-                  isOpen ? 'lg:w-80 w-66' : 'lg:w-36 w-[6.75rem]'
+              className={`carousel rounded-box transition-all duration-500 ${
+                  isOpen ? 'lg:w-80' : 'lg:w-36'
               }`}>
             {images.map((image, index) => (
                 <div key={index} className="carousel-item">

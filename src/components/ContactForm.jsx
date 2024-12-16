@@ -77,11 +77,11 @@ function ContactForm() {
     };
 
     return (
-        <div className="bg-secondary text-secondary-content card py-8 pl-4 pr-12 m-auto my-8 w-3/4 gap-2">
+        <div className="bg-secondary text-secondary-content card py-8 pl-4 pr-12 m-auto my-8 lg:w-3/4 w-[90%] gap-2">
             <form onSubmit={handleSubmit}
                   className="contact-form grid lg:grid-cols-[0.11fr_1fr] grid-cols-[0.15fr_1fr] gap-4">
                 <label htmlFor="name" className="self-center justify-self-end">
-                    Nom :
+                    Nom
                 </label>
                 <input
                     className="input input-bordered input-info w-[14rem]"
@@ -93,7 +93,7 @@ function ContactForm() {
                 />
 
                 <label htmlFor="email" className="self-center justify-self-end">
-                    Email :
+                    Email
                 </label>
                 <input
                     className="input input-bordered input-info w-[14rem]"
@@ -105,7 +105,7 @@ function ContactForm() {
                 />
 
                 <label htmlFor="message" className="self-start justify-self-end">
-                    Message :
+                    Message
                 </label>
                 <textarea
                     className="textarea textarea-info"

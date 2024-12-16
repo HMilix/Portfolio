@@ -50,7 +50,7 @@ function CollapsibleComponent({ img, imgAlt, titleOpen, titleClosed, content, li
         <div className="flex items-start cursor-pointer" onClick={handleToggle}>
           <div
               className={`overflow-auto lg:overflow-hidden transition-all duration-500 rounded-box ${
-                  isOpen ? "w-48 h-32 md:w-60 md:h-48" : "w-20 h-20"
+                  isOpen ? "w-32 h-48 lg:w-60 lg:h-48" : "w-20 h-20"
               }`}
               onClick={handleImageClick}>
             <img src={img} alt={imgAlt} className="w-full h-full object-cover" />
@@ -61,7 +61,7 @@ function CollapsibleComponent({ img, imgAlt, titleOpen, titleClosed, content, li
                 ref={contentRef}
                 className="transition-all duration-500 ease-in-out opacity-0 overflow-auto lg:overflow-hidden mt-4"
                 style={{ height: "0", transition: "height 0.3s ease, opacity 0.3s ease" }}>
-              <p className="text-neutral-content text-justify mb-4">{content}</p>
+              <p className="text-neutral-content text-justify mb-46">{content}</p>
               <div className="card-actions justify-end">
                 {showbutton && (
                     <a href={link} target="_blank" rel="noopener noreferrer">
