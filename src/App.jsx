@@ -20,9 +20,10 @@ function App() {
             case "contact":
                 return <ContactPage />;
             default:
-                return <HomePage />;
+                return <HomePage changePage={changePage} />;
         }
     };
+    
 
     return (
         <div className="">

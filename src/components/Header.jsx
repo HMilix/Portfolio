@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import { themeChange } from 'theme-change';
 
-function Header({ changePage }) {
+export function calledAbout(changePage) {
+    console.log("a");
+    changePage("about");
+}
+
+export function Header({ changePage }) {
     const [isHovered, setIsHovered] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'milixstheme');
 

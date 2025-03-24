@@ -13,7 +13,7 @@ function About() {
                 </div>
                 <p className="py-8 text-justify place-self-center text-wrap w-[70vw]">
                     Je suis <b>Axel Wilfart</b>, plus connu sous le nom de <b>Milix</b>, mon nom de créateur.
-                    J'ai actuellement 20 ans et je suis <b>étudiant à l'université</b> de Lille en <b>BUT
+                    J'ai actuellement 21 ans et je suis <b>étudiant à l'université</b> de Lille en <b>BUT
                     informatique</b> (anciennement DUT).
                     Je veux faire de l'informatique mon métier car c'est un domaine qui <b>m'intéresse énormément</b>,
                     et que j'aimerais différencier mes passions de mon métier. En effet, <b>la création</b> de contenu
@@ -33,7 +33,7 @@ function About() {
                 </div>
                 <p className="py-8 text-justify place-self-center text-wrap w-[70vw]">
                     Pour ce qui est de l'expérience professionnelle et informatique, pour mon stage de troisième
-                    j'ai eu la chance de faire une <b>stage à Norsys</b>. Mis à part quelques petits boulots par-ci
+                    j'ai eu la chance de faire un <b>stage à Norsys</b>. Mis à part quelques petits boulots par-ci
                     par-là, étant encore jeune
                     j'ai n'ai pas une grande connaissance du monde de l'entreprise. Mais ça ne serait tarder, ma
                     formation actuelle

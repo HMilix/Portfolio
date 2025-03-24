@@ -5,22 +5,25 @@ const sourceDir = path.join(__dirname, 'images');
 const distDir = path.join(__dirname, 'dist');
 const destDir = path.join(distDir, 'images');
 
-if (!fs.existsSync(destDir)) {
-    fs.mkdirSync(destDir, { recursive: true });
-}
+function copyDirectory(src, dest) {
+    if (!fs.existsSync(dest)) {
+        fs.mkdirSync(dest, { recursive: true });
+    }
 
-fs.readdirSync(sourceDir).forEach(file => {
-    if (/\.(png|gif|jpg)$/i.test(file)) {
-        const srcFile = path.join(sourceDir, file);
-        const destFile = path.join(destDir, file);
-        const distFile = path.join(distDir, file);
+    const entries = fs.readdirSync(src, { withFileTypes: true });
 
-        fs.copyFileSync(srcFile, destFile);
+    for (const entry of entries) {
+        const srcPath = path.join(src, entry.name);
+        const destPath = path.join(dest, entry.name);
 
-        if (fs.existsSync(distFile)) {
-            fs.unlinkSync(distFile);
+        if (entry.isDirectory()) {
+            copyDirectory(srcPath, destPath);
+        } else {
+            fs.copyFileSync(srcPath, destPath);
         }
     }
-});
+}
+
+copyDirectory(sourceDir, destDir);
 
 console.log('Images copied successfully!');

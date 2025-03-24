@@ -5,6 +5,9 @@ export default {
   ],
   theme: {
     extend: {
+      maskImage: {
+        'gradient-to-t': 'linear-gradient(to top, transparent, black)',
+      },
       fontFamily: {
         MADESoulmaze: ['MADESoulmaze', 'sans-serif'],
         MADESoulmazeItalic: ['MADESoulmazeItalic', 'sans-serif'],

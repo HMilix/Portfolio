@@ -1,17 +1,22 @@
-import Footer from "../components/Footer";
 import {useEffect} from "react";
 import {themeChange} from "theme-change";
 import CollapsibleCard from "../components/CollapsibleCard";
 import CollapsibleComponent from "../components/CollapsibleComponent";
 import WelcomeToast from "../components/WelcomeToast";
 
-function HomePage() {
+function HomePage({ changePage }) {
     useEffect(() => {
         themeChange(false);
     }, []);
     return (
         <>
             <div className="App overflow-x-hidden flex items-center justify-center flex-col">
+            <div className="inset-0 relative w-[80vw] mt-8">
+                <div className="absolute inset-0 bg-gradient-to-t from-base-100 from-[12%] to-transparent pointer-events-none"></div>
+                <button onClick={() => changePage('about')}>
+                    <img src="images/aboutPreview.png" alt="about preview" className="pointer-events-none w-full"/>
+                </button>
+            </div>
                 <div className="flex flex-row font-MADESoulmazeOutline font-bold mx-auto lg:text-4xl text-3xl py-8">
                     <h1 className="">MES PROJETS</h1>
                     <h1 className="pl-2 animate-blink">_</h1>
@@ -85,6 +90,16 @@ function HomePage() {
                             img="./images/projects/2024-SAE3.3.png"
                             imgAlt="Logiciel de visualisation de donnée avec un graphique"
                             link="https://github.com/HMilix/2024-SAE3.3"
+                            showbutton={true}/>
+                        <CollapsibleComponent
+                            titleClosed="Application de communication"
+                            titleOpen={`Réalisation d'une application de communication à la "Discord"`}
+                            content={`Par équipe de deux, nous avons créé une application de communication de type "fils de discussion", resemblant
+                                à Discord. Ce projet à été réalisé en quelques jours seulement et utilise Postgresql avec une API Rest pour le backend et
+                                Tailwindcss avec DaisyUI pour le frontend.`}
+                            img="./images/projects/2025-SA-S4.A02.1.png"
+                            imgAlt="Application de communication par fils"
+                            link="https://github.com/HMilix/2025-SA-S4.A02.1"
                             showbutton={true}/>
                     </div>
                 </div>
